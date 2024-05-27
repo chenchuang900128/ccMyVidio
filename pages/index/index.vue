@@ -4,8 +4,8 @@
 		<!-- goodsData：轮播图数据  @setShowVideo：视频按钮点击事件 -->
 		<cc-videoSwiper :goodsData="goodsData" @setShowVideo="setShowVideo"></cc-videoSwiper>
 
-		<!-- 预览视频弹窗  @touchmove.stop.prevent="ondefault"-->
-		<view class="mask" v-if="showVideo == true"  @click="hideShow">
+		<!-- 预览视频弹窗  -->
+		<view class="mask" v-if="showVideo == true" @touchmove.stop.prevent="handleTouchMove" @click="hideShow">
 			<view class="close">
 				<image src="/static/images/goods/close.png"></image>
 			</view>
@@ -58,7 +58,12 @@
 		},
 
 		methods: {
+			handleTouchMove() {
 
+				console.log('触摸移动被阻止了');
+
+
+			},
 			//操作视频
 			setShowVideo(showVideo, isH5) {
 				this.showVideo = showVideo
