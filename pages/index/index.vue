@@ -4,8 +4,8 @@
 		<!-- goodsData：轮播图数据  @setShowVideo：视频按钮点击事件 -->
 		<cc-videoSwiper :goodsData="goodsData" @setShowVideo="setShowVideo"></cc-videoSwiper>
 
-		<!-- 预览视频弹窗 -->
-		<view class="mask" v-if="showVideo == true" @touchmove.stop.prevent="ondefault" @click="hideShow">
+		<!-- 预览视频弹窗  @touchmove.stop.prevent="ondefault"-->
+		<view class="mask" v-if="showVideo == true"  @click="hideShow">
 			<view class="close">
 				<image src="/static/images/goods/close.png"></image>
 			</view>
@@ -33,8 +33,8 @@
 			return {
 
 				goodsData: {
-
-					videos: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
+					// http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4
+					videos: 'http://vjs.zencdn.net/v/oceans.mp4',
 					imgList: [
 						"https://cdn.pixabay.com/photo/2016/08/11/23/48/mountains-1587287_1280.jpg",
 						'https://cdn.pixabay.com/photo/2016/11/14/04/45/elephant-1822636_1280.jpg',
